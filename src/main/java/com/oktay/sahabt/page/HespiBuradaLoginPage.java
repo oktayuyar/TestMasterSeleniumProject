@@ -9,7 +9,7 @@ public class HespiBuradaLoginPage extends BasePageUtil{
         super(driver);
     }
 
-    public void login(String username, String password) {
+    public void login(String email, String password) {
 
     }
 }

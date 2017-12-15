@@ -8,7 +8,7 @@ public class HepsiBuradaLoginTest extends BaseTest {
 
     @Test
     public void hepsiBuradaSuccessLoginTest(){
-        new HepsiBuradaHomePage(driver).callLoginPage();
+        new HepsiBuradaHomePage(driver).callLoginPage().login(EMAIL,PASSWORD);
     }
 
     @Test

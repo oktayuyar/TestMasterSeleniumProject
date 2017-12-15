@@ -17,7 +17,7 @@ public class HepsiBuradaHomePage extends BasePageUtil{
         clickElement(By.xpath("//div[@id='myAccount']/a[2]"));
         sleep(2);
         clickElement(By.xpath("/html//a[@id='login']"));
-        Assert.assertTrue("Login failed!", getTitle().contains("Üye Giriş Sayfası"));
+        Assert.assertTrue("Login Page Failed    !", getTitle().contains("Üye Giriş Sayfası"));
         if (getTitle().contains("Üye Giriş Sayfası")){
             log.info("Üye Giriş Sayfasına geldi.");
         }else {
@@ -26,9 +26,18 @@ public class HepsiBuradaHomePage extends BasePageUtil{
         return new HespiBuradaLoginPage(driver);
     }
 
-    public HespiBuradaLoginPage callRegisterPage(){
-        callLoginPage();
-        clickElement(By.cssSelector(".login-selections .control-group:nth-of-type(2) .text"));
-        return new HespiBuradaLoginPage(driver);
+    public HepsiBuradaRegisterPage callRegisterPage(){
+        sleep(3);
+        clickElement(By.className("insider-opt-in-notification-button"));
+        clickElement(By.xpath("//div[@id='myAccount']/a[2]"));
+        sleep(2);
+        clickElement(By.xpath("/html//a[@id='register']"));
+        Assert.assertTrue("Register page failed!", getTitle().contains("Hemen Kayıt Ol!"));
+        if (getTitle().contains("Hemen Kayıt Ol!")){
+            log.info("Üye Kayıt Sayfasına geldi.");
+        }else {
+            log.info("Üye KAyıt Sayfası açılmadı!");
+        }
+        return new HepsiBuradaRegisterPage(driver);
     }
 }
