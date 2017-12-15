@@ -8,11 +8,11 @@ public class HepsiBuradaTest extends BaseTest {
 
     @Test
     public void hepsiBuradaSuccessLoginTest(){
-        new HepsiBuradaHomePage(driver).callLoginPage().login(EMAIL,PASSWORD);
+        new HepsiBuradaHomePage(driver).callLoginPage().login();
     }
 
     @Test
     public void hepsiBuradaSuccessRegisterTest(){
-        new HepsiBuradaHomePage(driver).callRegisterPage();
+        new HepsiBuradaHomePage(driver).callRegisterPage().register();
     }
 }
