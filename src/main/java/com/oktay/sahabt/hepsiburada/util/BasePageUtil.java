@@ -26,6 +26,10 @@ public class BasePageUtil implements General_Constants{
         find(by).click();
     }
 
+    public void submit(By by) {
+        driver.findElement(by).submit();
+    }
+
     public void setText(By by,String value){
         driver.findElement(by).sendKeys(value);
     }

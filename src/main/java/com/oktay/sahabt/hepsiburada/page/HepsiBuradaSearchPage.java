@@ -11,8 +11,8 @@ public class HepsiBuradaSearchPage extends BasePageUtil implements General_Const
         super(driver);
 
     }
-
-    public HepsiBuradaSearchPage searchPage(){
+    // Alert işlemlerini yaz
+    public HepsiBuradaSearchPage findMausePage(){
         clickElement(ELECTRONIC_XPATH);
         sleep(2);
         clickElement(COMPUTER_TABLET_XPATH);
@@ -22,11 +22,27 @@ public class HepsiBuradaSearchPage extends BasePageUtil implements General_Const
         clickElement(MAUSE_XPATH);
         sleep(2);
         clickItemOfPaginations(getItemOfPaginations());
-        sleep(2);
+
         return new HepsiBuradaSearchPage(driver);
     }
 
     public void showMauseDetails() {
+        sleep(2);
+        clickElement(MAUSE_DETAIL_XPATH);
+    }
 
+    public void searchMausePage(){
+        setText(PRODUCT_ID,PRODUCT_VALUE);
+        submit(PRODUCT_ID);
+        sleep(2);
+        clickElement(LOGITECH_MAUSE_XPATH);
+        sleep(3);
+        clickElement(SHOPPING_CART_ID);
+        sleep(2);
+        clickElement(INCREASE_CART_XPATH);
+        sleep(2);
+        clickElement(INCREASE_CART_XPATH);
+        sleep(2);
+        clickElement(COMPLETE_SHOPPING_XPATH);
     }
 }

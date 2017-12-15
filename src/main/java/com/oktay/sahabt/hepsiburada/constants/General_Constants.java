@@ -52,6 +52,12 @@ public interface General_Constants {
     By INPUT_OUTPUT_DEVICES_XPATH =By.xpath("/html//div[@id='productResult']//section[@class='page-options']/div[@class='filter-box-container']/div[2]/div//div[@class='items-container']/ul[@class='items']/li[@alt='Çevre Birimleri']/a[@href='/cevre-birimleri-c-3013120']");
     By MAUSE_XPATH = By.xpath("/html//div[@id='productResult']//section[@class='page-options']/div[@class='filter-box-container']/div[2]/div//div[@class='items-container']/ul[@class='items']/li[@alt='Mouse']/a[@href='/mouse-c-52']");
     By PAGE_NAVIGATION= By.id("pagination");
-
+    By MAUSE_DETAIL_XPATH = By.xpath("//div[@id='productresults']/div[3]/div/div/div[@class='box-container loader']/div/ul//a[@href='/a4-tech-g3-200n-v-track-siyah-turuncu-kablosuz-mouse-p-BD801509']/figure/img[@alt='A4 Tech G3-200N V-Track Siyah Turuncu Kablosuz Mouse']");
+    By PRODUCT_ID = By.id("productSearch");
+    String PRODUCT_VALUE = "BD300723";
+    By LOGITECH_MAUSE_XPATH= By.xpath("//div[@id='productresults']/div[2]/div/div/div[@class='box-container loader']//ul/li[1]//a[@href='/logitech-m185-nano-optik-kablosuz-mouse-mavi-910-002236-p-BD300723']//button[@class='add-to-basket button small']");
+    By SHOPPING_CART_ID = By.id("shoppingCart");
+    By INCREASE_CART_XPATH = By.xpath("/html//form[@id='form-item-list']/ul[@class='cart-item-list']//button[@title='Arttır']");
+    By COMPLETE_SHOPPING_XPATH =By.xpath("//div[@id='short-summary']//button[@class='btn btn-primary full']/span[@class='text']");
 
 }
