@@ -2,9 +2,10 @@ package com.oktay.sahabt.constants;
 
 public interface General_Constants {
 
-    String driverName = "webdriver.chrome.driver";
-    String driverPath = "/home/oktay/ChromeDriver/chromedriver";
-    String urlHepsiBurada = "http://www.hepsiburada.com";
-    String urlDefacto = "http://www.defacto.com.tr";
-
+    String DRIVER_NAME = "webdriver.chrome.driver";
+    String DRIVER_PATH= "/home/oktay/ChromeDriver/chromedriver";
+    String URL_HEPSIBURADA = "http://www.hepsiburada.com";
+    String URL_DEFACTO = "http://www.defacto.com.tr";
+    String EMAIL = "oktyuyar@gmail.com";
+    String PASSWORD = "q1w2e3." ;
 }

@@ -12,10 +12,10 @@ public class BaseTest implements General_Constants{
 
     @Before
     public void setup() {
-        System.setProperty(driverName, driverPath);
+        System.setProperty(DRIVER_NAME, DRIVER_PATH);
         driver= new ChromeDriver();
         driver.manage().window().maximize();
-        driver.navigate().to(urlHepsiBurada);
+        driver.navigate().to(URL_HEPSIBURADA);
     }
 
 }
