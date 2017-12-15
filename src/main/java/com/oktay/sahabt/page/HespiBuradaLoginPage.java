@@ -8,4 +8,8 @@ public class HespiBuradaLoginPage extends BasePageUtil{
     public HespiBuradaLoginPage(WebDriver driver) {
         super(driver);
     }
+
+    public void login(String username, String password) {
+
+    }
 }
