@@ -1,4 +1,4 @@
-package com.oktay.sahabt.constants;
+package com.oktay.sahabt.hepsiburada.constants;
 
 public interface General_Constants {
 

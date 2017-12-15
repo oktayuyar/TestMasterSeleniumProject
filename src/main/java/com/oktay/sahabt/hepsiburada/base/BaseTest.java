@@ -1,12 +1,11 @@
-package com.oktay.sahabt.base;
+package com.oktay.sahabt.hepsiburada.base;
 
-import com.oktay.sahabt.constants.General_Constants;
-import org.junit.After;
+import com.oktay.sahabt.hepsiburada.constants.General_Constants;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class BaseTest implements General_Constants{
+public class BaseTest implements General_Constants {
 
     public WebDriver driver;
 

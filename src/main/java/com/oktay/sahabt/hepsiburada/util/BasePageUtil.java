@@ -1,4 +1,4 @@
-package com.oktay.sahabt.util;
+package com.oktay.sahabt.hepsiburada.util;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;

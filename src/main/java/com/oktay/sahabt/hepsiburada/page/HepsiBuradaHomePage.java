@@ -1,6 +1,6 @@
-package com.oktay.sahabt.page;
+package com.oktay.sahabt.hepsiburada.page;
 
-import com.oktay.sahabt.util.BasePageUtil;
+import com.oktay.sahabt.hepsiburada.util.BasePageUtil;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -36,7 +36,7 @@ public class HepsiBuradaHomePage extends BasePageUtil{
         if (getTitle().contains("Hemen Kayıt Ol!")){
             log.info("Üye Kayıt Sayfasına geldi.");
         }else {
-            log.info("Üye KAyıt Sayfası açılmadı!");
+            log.info("Üye Kayıt Sayfası açılmadı!");
         }
         return new HepsiBuradaRegisterPage(driver);
     }

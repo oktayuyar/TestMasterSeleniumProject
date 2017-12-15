@@ -1,7 +1,7 @@
-package com.oktay.sahabt.test;
+package com.oktay.sahabt.hepsiburada.test;
 
-import com.oktay.sahabt.base.BaseTest;
-import com.oktay.sahabt.page.HepsiBuradaHomePage;
+import com.oktay.sahabt.hepsiburada.base.BaseTest;
+import com.oktay.sahabt.hepsiburada.page.HepsiBuradaHomePage;
 import org.junit.Test;
 
 public class HepsiBuradaLoginTest extends BaseTest {
