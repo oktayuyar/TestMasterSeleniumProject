@@ -6,7 +6,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.apache.log4j.Logger;
 
-
 public class BasePageUtil {
 
     protected WebDriver driver;
@@ -50,11 +49,5 @@ public class BasePageUtil {
             System.out.println(e.getMessage());
         }
     }
-    public void thread(int time) {
-        try {
-            Thread.sleep(time);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
+
 }

@@ -4,7 +4,7 @@ import com.oktay.sahabt.hepsiburada.base.BaseTest;
 import com.oktay.sahabt.hepsiburada.page.HepsiBuradaHomePage;
 import org.junit.Test;
 
-public class HepsiBuradaLoginTest extends BaseTest {
+public class HepsiBuradaTest extends BaseTest {
 
     @Test
     public void hepsiBuradaSuccessLoginTest(){
