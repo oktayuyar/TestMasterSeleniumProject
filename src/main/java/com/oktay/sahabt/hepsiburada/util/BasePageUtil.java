@@ -1,12 +1,15 @@
 package com.oktay.sahabt.hepsiburada.util;
 
+import com.oktay.sahabt.hepsiburada.constants.General_Constants;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.apache.log4j.Logger;
 
-public class BasePageUtil {
+import java.util.List;
+
+public class BasePageUtil implements General_Constants{
 
     protected WebDriver driver;
     protected final Logger log = Logger.getLogger(getClass().getName());
@@ -23,10 +26,6 @@ public class BasePageUtil {
         find(by).click();
     }
 
-    public void submit(By by) {
-        driver.findElement(by).submit();
-    }
-
     public void setText(By by,String value){
         driver.findElement(by).sendKeys(value);
     }
@@ -38,8 +37,18 @@ public class BasePageUtil {
         return element;
     }
 
-    public void quit(){
-        driver.quit();
+    public List<WebElement> getItemOfPaginations(){
+        List<WebElement> items=driver.findElements(PAGE_NAVIGATION);
+        System.out.println(items.toArray());
+        return items;
+    }
+
+    public void clickItemOfPaginations(List<WebElement> items){
+        for (int i=0;i<items.size();i++) {
+            sleep(10);
+            items.get(i).click();
+
+        }
     }
 
     public void sleep(int second){

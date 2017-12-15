@@ -38,7 +38,6 @@ public interface General_Constants {
     String REGISTER_PAGE_ERROR_MESSAGE = "Üye Kayıt Sayfası açılamadı!" ;
     String REGISTER_PAGE_SUCCESS_MESSAGE = "Üye Kayıt Sayfası açıldı." ;
 
-
     // LoginPage Constants
     By EMAIL_TEXTBOX = By.id("email");
     By PASSWORD_TEXTBOX = By.id("password");
@@ -46,5 +45,13 @@ public interface General_Constants {
     String LOGIN_ERROR_MESSAGE = "Giriş Yapılamadı!";
     String HOME_PAGE_TITLE = "Türkiye'nin En Büyük Online Alışveriş Sitesi";
     String LOGIN_SUCCESS_MESSAGE = "Giriş Başarılı Bir şekilde Yapıldı Anasayfadasınız." ;
+
+    // Search Page Constants
+    By ELECTRONIC_XPATH =By.xpath("//li[@id='elektronik']//span[.='ELEKTRONİK']");
+    By COMPUTER_TABLET_XPATH =By.xpath("//li[@id='elektronik']/div//ul[@class='nav-home']/li[1]/a[@href='/bilgisayarlar-c-2147483646']");
+    By INPUT_OUTPUT_DEVICES_XPATH =By.xpath("/html//div[@id='productResult']//section[@class='page-options']/div[@class='filter-box-container']/div[2]/div//div[@class='items-container']/ul[@class='items']/li[@alt='Çevre Birimleri']/a[@href='/cevre-birimleri-c-3013120']");
+    By MAUSE_XPATH = By.xpath("/html//div[@id='productResult']//section[@class='page-options']/div[@class='filter-box-container']/div[2]/div//div[@class='items-container']/ul[@class='items']/li[@alt='Mouse']/a[@href='/mouse-c-52']");
+    By PAGE_NAVIGATION= By.id("pagination");
+
 
 }

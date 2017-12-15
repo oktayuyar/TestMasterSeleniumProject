@@ -38,4 +38,5 @@ public class HepsiBuradaHomePage extends BasePageUtil implements General_Constan
 
         return new HepsiBuradaRegisterPage(driver);
     }
+
 }

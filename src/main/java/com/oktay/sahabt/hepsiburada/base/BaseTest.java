@@ -18,9 +18,4 @@ public class BaseTest implements General_Constants {
         driver.navigate().to(URL_HEPSIBURADA);
     }
 
-    @After
-    public void close(){
-        driver.close();
-    }
-
 }
