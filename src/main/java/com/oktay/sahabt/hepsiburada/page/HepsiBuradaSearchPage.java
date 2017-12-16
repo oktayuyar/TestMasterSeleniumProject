@@ -1,5 +1,6 @@
 package com.oktay.sahabt.hepsiburada.page;
 
+import com.oktay.sahabt.hepsiburada.base.BaseTest;
 import com.oktay.sahabt.hepsiburada.constants.General_Constants;
 import com.oktay.sahabt.hepsiburada.util.BasePageUtil;
 import org.junit.Assert;
@@ -22,7 +23,8 @@ public class HepsiBuradaSearchPage extends BasePageUtil implements General_Const
         sleep(2);
         clickElement(MAUSE_XPATH);
         sleep(2);
-        clickItemOfPaginations(getItemOfPaginations());
+        clickItemOfPaginations();
+        sleep(3);
 
         return new HepsiBuradaSearchPage(driver);
     }
@@ -30,6 +32,7 @@ public class HepsiBuradaSearchPage extends BasePageUtil implements General_Const
     public void showMauseDetails() {
         sleep(2);
         clickElement(MAUSE_DETAIL_XPATH);
+
     }
 
     public void searchMause(){
@@ -62,6 +65,50 @@ public class HepsiBuradaSearchPage extends BasePageUtil implements General_Const
         log.info(PAYMENT_PAGE_SUCCESS_MESSAGE);
 
         return new HepsiBuradaPaymentPage(driver);
+    }
+
+    public void searchShoe(){
+        setText(PRODUCT_ID,"Ayakkabı");
+        submit(PRODUCT_ID);
+
+        clickElement(MAN_XPATH);
+        Assert.assertTrue(REGISTER_ERROR_MESSAGE, getTitle().contains("Erkek Ürünleri"));
+        log.info("Erkek ürünleri tıklandı");
+
+        clickElement(MAN__SHOES_XPATH);
+        Assert.assertTrue(REGISTER_ERROR_MESSAGE, getTitle().contains("Erkek Ayakkabı Modelleri"));
+        log.info("Erkek ayakkabı modelleri tıklandı");
+
+        clickElement(DAILY_SHOES_XPATH);
+        Assert.assertTrue(REGISTER_ERROR_MESSAGE, getTitle().contains("Günlük Erkek Ayakkabı Modelleri"));
+        log.info("Günlük Erkek ayakkabı modelleri tıklandı");
+
+        sleep(2);
+        setText(SEARCH_BRAND_OF_SHOES_XPATH,"Dockers");
+        sleep(2);
+        clickElement(SELECT_BRAND_OF_SHOES_XPATH);
+        getTitle();
+        getFılters();
+        setText(MIN_SHOES_PRICE_XPATH,"250");
+        setText(MAX_SHOES_PRICE_XPATH,"500");
+        sleep(2);
+        clickElement(SEARCH_PRICE_XPATH);
+        getFılters();
+        sleep(2);
+        clickElement(SHOES_COLOR_XPATH);
+        sleep(2);
+        getFılters();
+        clickElement(SHOES_NUMBER_XPATH);
+        sleep(2);
+        getFılters();
+        clickElement(SHOES_STORE_XPATH);
+        sleep(2);
+        getFılters();
+        sleep(3);
+        clickElement(SELECTED_SHOES_XPATH);
+        sleep(2);
+        Assert.assertTrue(REGISTER_ERROR_MESSAGE, getTitle().contains("Dockers 6P 220370 M K Kah Ayakkabı"));
+        log.info("Dockers 6P 220370 M K Kah Ayakkabı");
     }
 
 }

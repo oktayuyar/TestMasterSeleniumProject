@@ -30,8 +30,14 @@ public class HepsiBuradaTest extends BaseTest {
     }
 
     @Test
-    public void hepsiBuradaSerachIphoneAndBuyTest(){
+    public void hepsiBuradaSearchIphoneAndBuyTest(){
         hepsiBuradaSuccessLoginTest();
-        new HepsiBuradaSearchPage(driver).searchIponeAndGoPayment().payment();
+        new HepsiBuradaSearchPage(driver).searchIponeAndGoPayment().complatePayment();
+    }
+
+    @Test
+    public void hepsiBuradaSearchShoeTest(){
+        hepsiBuradaSuccessLoginTest();
+        new HepsiBuradaSearchPage(driver).searchShoe();
     }
 }

@@ -1,12 +1,8 @@
 package com.oktay.sahabt.hepsiburada.util;
 
 import com.oktay.sahabt.hepsiburada.constants.General_Constants;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.apache.log4j.Logger;
-
 import java.util.List;
 
 public class BasePageUtil implements General_Constants{
@@ -41,17 +37,33 @@ public class BasePageUtil implements General_Constants{
         return element;
     }
 
-    public List<WebElement> getItemOfPaginations(){
-        List<WebElement> items=driver.findElements(PAGE_NAVIGATION);
-        System.out.println(items.toArray());
+    public List<WebElement> getFılters(){
+        List<WebElement> items=driver.findElements(By.className("appliedFilter"));
+        log.info("Uygulanan Filtreler");
+        for(WebElement e: items){
+            System.out.println(e.getText());
+        }
         return items;
     }
 
-    public void clickItemOfPaginations(List<WebElement> items){
-        for (int i=0;i<items.size();i++) {
-            sleep(10);
-            items.get(i).click();
+    public List<WebElement> getBadgets(){
+        List<WebElement> items=driver.findElements(By.className("badge-box"));
+        log.info("Badgets");
+        for(WebElement e: items){
+            System.out.println(e.getText());
+        }
+        return items;
+    }
 
+    // ekranı aşağıdan yukarı kaydırmak için
+    public void swipeUp(){
+    }
+
+    public void clickItemOfPaginations(){
+        for (int i=2;i<8;i++) {
+            swipeUp();
+            sleep(3);
+            clickElement(By.className("page-"+i));
         }
     }
 
