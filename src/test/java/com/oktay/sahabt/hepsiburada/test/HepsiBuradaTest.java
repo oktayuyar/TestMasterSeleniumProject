@@ -26,6 +26,12 @@ public class HepsiBuradaTest extends BaseTest {
     @Test
     public void hepsiBuradaSearchMauseTest(){
         hepsiBuradaSuccessLoginTest();
-        new HepsiBuradaSearchPage(driver).searchMausePage();
+        new HepsiBuradaSearchPage(driver).searchMause();
+    }
+
+    @Test
+    public void hepsiBuradaSerachIphoneAndBuyTest(){
+        hepsiBuradaSuccessLoginTest();
+        new HepsiBuradaSearchPage(driver).searchIponeAndGoPayment().payment();
     }
 }

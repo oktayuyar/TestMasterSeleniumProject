@@ -54,10 +54,19 @@ public interface General_Constants {
     By PAGE_NAVIGATION= By.id("pagination");
     By MAUSE_DETAIL_XPATH = By.xpath("//div[@id='productresults']/div[3]/div/div/div[@class='box-container loader']/div/ul//a[@href='/a4-tech-g3-200n-v-track-siyah-turuncu-kablosuz-mouse-p-BD801509']/figure/img[@alt='A4 Tech G3-200N V-Track Siyah Turuncu Kablosuz Mouse']");
     By PRODUCT_ID = By.id("productSearch");
-    String PRODUCT_VALUE = "BD300723";
+    String MAUSE_PRODUCT_VALUE = "BD300723";
     By LOGITECH_MAUSE_XPATH= By.xpath("//div[@id='productresults']/div[2]/div/div/div[@class='box-container loader']//ul/li[1]//a[@href='/logitech-m185-nano-optik-kablosuz-mouse-mavi-910-002236-p-BD300723']//button[@class='add-to-basket button small']");
     By SHOPPING_CART_ID = By.id("shoppingCart");
     By INCREASE_CART_XPATH = By.xpath("/html//form[@id='form-item-list']/ul[@class='cart-item-list']//button[@title='Arttır']");
     By COMPLETE_SHOPPING_XPATH =By.xpath("//div[@id='short-summary']//button[@class='btn btn-primary full']/span[@class='text']");
+    String IPHONE_PRODUCT_VALUE = "HBV000007PV9M";
+    By IPHONE_XPATH= By.xpath("//div[@id='productresults']/div[2]/div/div/div[@class='box-container loader']//ul//a[@href='/apple-iphone-8-plus-64-gb-apple-turkiye-garantili-p-HBV000007PV9M']//div[@class='owl-stage']/div[2]/img[@alt='Apple iPhone 8 Plus 64 GB (Apple Türkiye Garantili)']");
+    By ADD_TO_CART_ID = By.id("addToCart");
+    By IPHONE_DETAIL_XPATH = By.xpath("//div[@id='productresults']/div[2]/div/div/div[@class='box-container loader']//ul//a[@href='/apple-iphone-8-plus-64-gb-apple-turkiye-garantili-p-HBV000007PV9M']/div[@class='product-detail']");
+    String PAYMENT_PAGE_ERROR_MESSAGE = "ÖDeme sayfasına gelmedi!";
+    String PAYMENT_PAGE_SUCCESS_MESSAGE = "Ödeme sayfasına başarılı bir şekilde gelindi";
+    String PAYMENT_PAGE_TITLE ="Teslimat Bilgileri";
+
+    //
 
 }
