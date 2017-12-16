@@ -52,7 +52,7 @@ public interface General_Constants {
     By INPUT_OUTPUT_DEVICES_XPATH =By.xpath("/html//div[@id='productResult']//section[@class='page-options']/div[@class='filter-box-container']/div[2]/div//div[@class='items-container']/ul[@class='items']/li[@alt='Çevre Birimleri']/a[@href='/cevre-birimleri-c-3013120']");
     By MAUSE_XPATH = By.xpath("/html//div[@id='productResult']//section[@class='page-options']/div[@class='filter-box-container']/div[2]/div//div[@class='items-container']/ul[@class='items']/li[@alt='Mouse']/a[@href='/mouse-c-52']");
     By  PAGE_NAVIGATION= By.className("page");
-    By MAUSE_DETAIL_XPATH = By.xpath("//div[@id='productresults']/div[3]/div/div/div[@class='box-container loader']/div/ul/li[2]//a[@href='/logitech-g300s-kablolu-oyuncu-mouse-910-004346-p-BD802935']//span[@class='price product-price']");
+    By MAUSE_DETAIL_XPATH = By.cssSelector("[href=\"\\/logitech-t630-ultrathin-touch-bluetooth-mouse-910-003832-p-BD801517\"] .product-title span");
     By PRODUCT_ID = By.id("productSearch");
     String MAUSE_PRODUCT_VALUE = "BD300723";
     By LOGITECH_MAUSE_XPATH= By.xpath("//div[@id='productresults']/div[2]/div/div/div[@class='box-container loader']//ul/li[1]//a[@href='/logitech-m185-nano-optik-kablosuz-mouse-mavi-910-002236-p-BD300723']//button[@class='add-to-basket button small']");
@@ -78,24 +78,35 @@ public interface General_Constants {
     By SELECTED_SHOES_XPATH = By.xpath("//div[@id='productresults']/div[3]/div/div/div[@class='box-container loader']//ul/div/li/div/a[@href='/dockers-6p-220370-m-k-kah-ayakkabi-p-HBV000002NL6N?magaza=Moda%20Ate%C5%9Fi']//span[@class='price product-price']");
 
     //Payment
-    String PAYMENT_PAGE_ERROR_MESSAGE = "ÖDeme sayfasına gelmedi!";
+    String DELIVERY_PAGE_ERROR_MESSAGE = "Teslimat sayfası gelmedi!";
+    String DELIVERY_PAGE_SUCCESS_MESSAGE = "Teslimat sayfasına başarılı bir şekilde geçildi";
+    String DELIVERY_PAGE_TITLE ="Teslimat Bilgileri";
+    String PAYMENT_PAGE_ERROR_MESSAGE = "Ödeme sayfasına gelmedi!";
     String PAYMENT_PAGE_SUCCESS_MESSAGE = "Ödeme sayfasına başarılı bir şekilde geçildi";
-    String PAYMENT_PAGE_TITLE ="Teslimat Bilgileri";
+    String PAYMENT_PAGE_TITLE ="Ödeme Bilgileri";
     By NAME_TEXTBOX = By.id("first-name");
     By SURNAME_TEXTBOX = By.id("last-name");
     By ADDRESS_TEXTBOX = By.id("address");
     By ADDRESS_NAME_TEXTBOX = By.id("address-name");
     By PHONE_TEXTBOX = By.id("phone");
     By TOWN_DROPDOWN_MENU_XPATH= By.xpath("//form[@id='form-address']//div[@class='box-content']/section[2]/div[3]/div[@class='controls']/div/button[@title='ADALAR']/span[@class='filter-option pull-left']");
-    By CONTINUE_PAYMENT_XPATH= By.xpath("/html//div[@id='short-summary']//button[@class='btn btn-primary full']");
+    By CONTINUE_PAYMENT_XPATH= By.xpath("//div[@id='short-summary']//button[@class='btn btn-primary full']/span[@class='text']");
+
     By CARD_NUMBER_ID = By.id("card-no");
+    String CARD_NUMBER = "4506344220167848";
     By CARD_NAME_XPATH = By.xpath("/html//input[@id='holder-Name']");
+    String CARD_NAME = "Oktay Uyar";
     By MOUNTH_XPATH = By.xpath("/html//form[@id='form-credit-card']//div[@class='date-col group']/div[1]/div/button[@title='Ay']/span[@class='filter-option pull-left']");
+    By SELECTED_MOUNTH_XPATH = By.xpath("/html//form[@id='form-credit-card']//div[@class='date-col group']/div[1]/div/div/ul[@role='menu']/li[@rel='10']/a[@class='']");
     By YEAR_XPATH = By.xpath("/html//form[@id='form-credit-card']//div[@class='date-col group']/div[2]/div/button[@title='Yıl']/span[@class='filter-option pull-left']");
+    By SELECTED_YEAR_XPATH = By.xpath("/html//form[@id='form-credit-card']//div[@class='date-col group']/div[2]/div/div/ul[@role='menu']/li[@rel='6']/a[@class='']");
     By CCV_ID = By.id("cvc");
+    String CCV= "290";
+    By CONTINUE_XPATH =By.xpath("/html//div[@id='short-summary']//button[@class='btn btn-primary full']");
 
-
-
+    String  PAYMENT_INFORMATION_TITLE = "Ödeme Bilgileri";
+    String PAYMENT_INFORMATION_PAGE_ERROR_MESSAGE ="Ödeme Bilgileri Sayfası gelmedi!";
+    String PAYMENT_INFORMATION_PAGE_MESSAGE = "Ödeme Bilgileri Sayfasına başarılı bir şekilde geçildi!";
 
 
 }

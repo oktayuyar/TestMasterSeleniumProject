@@ -29,21 +29,27 @@ public class HepsiBuradaPaymentPage extends BasePageUtil implements General_Cons
 
         clickElement(CONTINUE_PAYMENT_XPATH);
 
+        Assert.assertTrue(PAYMENT_PAGE_ERROR_MESSAGE, getTitle().contains(DELIVERY_PAGE_TITLE));
+        log.info(PAYMENT_PAGE_SUCCESS_MESSAGE);
+
     }
 
     public void setCardInformation() {
         sleep(3);
-        setText(CARD_NUMBER_ID,"4506344220167848");
+        setText(CARD_NUMBER_ID,CARD_NUMBER);
         sleep(2);
-        setText(CARD_NAME_XPATH,"Oktay Uyar");
+        setText(CARD_NAME_XPATH,CARD_NAME);
         clickElement(MOUNTH_XPATH);
-        clickElement(By.xpath("/html//form[@id='form-credit-card']//div[@class='date-col group']/div[1]/div/div/ul[@role='menu']/li[@rel='10']/a[@class='']"));
+        clickElement(SELECTED_MOUNTH_XPATH);
         sleep(2);
         clickElement(YEAR_XPATH);
-        clickElement(By.xpath("/html//form[@id='form-credit-card']//div[@class='date-col group']/div[2]/div/div/ul[@role='menu']/li[@rel='6']/a[@class='']"));
+        clickElement(SELECTED_YEAR_XPATH);
         sleep(2);
-        setText(CCV_ID,"290");
+        setText(CCV_ID,CCV);
         sleep(2);
-        clickElement(By.xpath("/html//div[@id='short-summary']//button[@class='btn btn-primary full']"));
+        clickElement(CONTINUE_XPATH);
+
+        Assert.assertTrue(PAYMENT_INFORMATION_PAGE_ERROR_MESSAGE, getTitle().contains(PAYMENT_INFORMATION_TITLE));
+        log.info(PAYMENT_INFORMATION_PAGE_MESSAGE);
     }
 }

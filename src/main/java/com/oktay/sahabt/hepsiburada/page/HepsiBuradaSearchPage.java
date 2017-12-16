@@ -61,8 +61,8 @@ public class HepsiBuradaSearchPage extends BasePageUtil implements General_Const
         clickElement(COMPLETE_SHOPPING_XPATH);
         sleep(3);
 
-        Assert.assertTrue(PAYMENT_PAGE_ERROR_MESSAGE, getTitle().contains(PAYMENT_PAGE_TITLE));
-        log.info(PAYMENT_PAGE_SUCCESS_MESSAGE);
+        Assert.assertTrue(DELIVERY_PAGE_ERROR_MESSAGE, getTitle().contains(DELIVERY_PAGE_TITLE));
+        log.info(DELIVERY_PAGE_SUCCESS_MESSAGE);
 
         return new HepsiBuradaPaymentPage(driver);
     }

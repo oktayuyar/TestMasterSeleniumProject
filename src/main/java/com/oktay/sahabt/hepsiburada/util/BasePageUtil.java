@@ -3,6 +3,8 @@ package com.oktay.sahabt.hepsiburada.util;
 import com.oktay.sahabt.hepsiburada.constants.General_Constants;
 import org.openqa.selenium.*;
 import org.apache.log4j.Logger;
+import org.openqa.selenium.interactions.internal.TouchAction;
+
 import java.util.List;
 
 public class BasePageUtil implements General_Constants{
@@ -57,12 +59,14 @@ public class BasePageUtil implements General_Constants{
 
     // ekranı aşağıdan yukarı kaydırmak için
     public void swipeUp(){
+        ((JavascriptExecutor) driver).executeScript("scroll(0,2500);");
     }
 
     public void clickItemOfPaginations(){
         for (int i=2;i<8;i++) {
             swipeUp();
             sleep(3);
+            swipeUp();
             clickElement(By.className("page-"+i));
         }
     }
