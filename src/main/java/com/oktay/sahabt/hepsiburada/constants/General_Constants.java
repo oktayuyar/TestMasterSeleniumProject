@@ -7,7 +7,6 @@ public interface General_Constants {
     String DRIVER_NAME = "webdriver.chrome.driver";
     String DRIVER_PATH= "/home/oktay/ChromeDriver/chromedriver";
     String URL_HEPSIBURADA = "http://www.hepsiburada.com";
-    String URL_DEFACTO = "http://www.defacto.com.tr";
 
     // LoginPage,RegisterPage Constants
     String NAME = "OKtay";
@@ -50,12 +49,12 @@ public interface General_Constants {
     By ELECTRONIC_XPATH =By.xpath("//li[@id='elektronik']//span[.='ELEKTRONİK']");
     By COMPUTER_TABLET_XPATH =By.xpath("//li[@id='elektronik']/div//ul[@class='nav-home']/li[1]/a[@href='/bilgisayarlar-c-2147483646']");
     By INPUT_OUTPUT_DEVICES_XPATH =By.xpath("/html//div[@id='productResult']//section[@class='page-options']/div[@class='filter-box-container']/div[2]/div//div[@class='items-container']/ul[@class='items']/li[@alt='Çevre Birimleri']/a[@href='/cevre-birimleri-c-3013120']");
-    By MAUSE_XPATH = By.xpath("/html//div[@id='productResult']//section[@class='page-options']/div[@class='filter-box-container']/div[2]/div//div[@class='items-container']/ul[@class='items']/li[@alt='Mouse']/a[@href='/mouse-c-52']");
-    By  PAGE_NAVIGATION= By.className("page");
-    By MAUSE_DETAIL_XPATH = By.cssSelector("[href=\"\\/logitech-t630-ultrathin-touch-bluetooth-mouse-910-003832-p-BD801517\"] .product-title span");
+    By MOUSE_XPATH = By.xpath("/html//div[@id='productResult']//section[@class='page-options']/div[@class='filter-box-container']/div[2]/div//div[@class='items-container']/ul[@class='items']/li[@alt='Mouse']/a[@href='/mouse-c-52']");
+    By PAGE_NAVIGATION= By.className("page");
+    By MOUSE_DETAIL_XPATH = By.cssSelector("[href=\"\\/logitech-t630-ultrathin-touch-bluetooth-mouse-910-003832-p-BD801517\"] .product-title span");
     By PRODUCT_ID = By.id("productSearch");
-    String MAUSE_PRODUCT_VALUE = "BD300723";
-    By LOGITECH_MAUSE_XPATH= By.xpath("//div[@id='productresults']/div[2]/div/div/div[@class='box-container loader']//ul/li[1]//a[@href='/logitech-m185-nano-optik-kablosuz-mouse-mavi-910-002236-p-BD300723']//button[@class='add-to-basket button small']");
+    String MOUSE_PRODUCT_VALUE = "BD300723";
+    By LOGITECH_MOUSE_XPATH= By.xpath("//div[@id='productresults']/div[2]/div/div/div[@class='box-container loader']//ul/li[1]//a[@href='/logitech-m185-nano-optik-kablosuz-mouse-mavi-910-002236-p-BD300723']//button[@class='add-to-basket button small']");
     By SHOPPING_CART_ID = By.id("shoppingCart");
     By INCREASE_CART_XPATH = By.xpath("/html//form[@id='form-item-list']/ul[@class='cart-item-list']//button[@title='Arttır']");
     By COMPLETE_SHOPPING_XPATH =By.xpath("//div[@id='short-summary']//button[@class='btn btn-primary full']/span[@class='text']");
@@ -63,19 +62,37 @@ public interface General_Constants {
     By IPHONE_XPATH= By.xpath("//div[@id='productresults']/div[2]/div/div/div[@class='box-container loader']//ul//a[@href='/apple-iphone-8-plus-64-gb-apple-turkiye-garantili-p-HBV000007PV9M']//div[@class='owl-stage']/div[2]/img[@alt='Apple iPhone 8 Plus 64 GB (Apple Türkiye Garantili)']");
     By ADD_TO_CART_ID = By.id("addToCart");
     By IPHONE_DETAIL_XPATH = By.xpath("//div[@id='productresults']/div[2]/div/div/div[@class='box-container loader']//ul//a[@href='/apple-iphone-8-plus-64-gb-apple-turkiye-garantili-p-HBV000007PV9M']/div[@class='product-detail']");
+    String SHOE_PRODUCT_VALUE = "Ayakkabı";
+    String MAN_PRODUCT_TITLE= "Erkek Ürünleri";
+    String MAN_PRODUCT_PAGE_MESSAGE = "Erkek Ürünlerine başarılı bir şekilde tıklandı";
+    String MAN_PRODUCT_PAGE_ERROR_MESSAGE = "Erkek Ürünleri tıklanamadı!";
+    String MAN_SHOE_MODELS_TITLE= "Erkek Ayakkabı Modelleri" ;
+    String MAN_SHOE_MODELS_MESSAGE ="Erkek ayakkabı modelleri tıklandı";
+    String MAN_SHOE_MODELS_ERROR_MESSAGE ="Erkek ayakkabı modelleri tıklanamadı!";
+    String DAILY_MAN_SHOE_MODELS_TITLE= "Günlük Erkek Ayakkabı Modelleri";
+    String DAILY_MAN_SHOE_MODELS_MESSAGE ="Günlük erkek ayakkabı modelleri tıklandı";
+    String DAILY_MAN_SHOE_MODELS_ERROR_MESSAGE ="Erkek ayakkabı modelleri tıklanamadı!";
+    String BRAND_OF_SHOE_VALUE = "Dockers";
+
+
 
     By MAN_XPATH=By.xpath("//div[@id='productResult']//section[@class='page-options']/div[@class='filter-box-container']/div[2]/div//div[@class='items-container']/ul[@class='items']/li[@alt='Erkek']/a[@href='/erkek-giyim-modelleri-c-12087177']/span[1]");
-    By MAN__SHOES_XPATH=By.xpath("//div[@id='productResult']//section[@class='page-options']/div[@class='filter-box-container']/div[2]/div//div[@class='items-container']/ul[@class='items']/li[@alt='Erkek Ayakkabı']/a[@href='/ayakkabi-c-60000117']/span[1]");
-    By DAILY_SHOES_XPATH = By.xpath("/html//div[@id='productResult']//section[@class='page-options']/div[@class='filter-box-container']/div[2]/div//div[@class='items-container']/ul[@class='items']/li[@alt='Günlük Ayakkabı']/a[@href='/erkek-gunluk-ayakkabilar-c-60000126']");
-    By SEARCH_BRAND_OF_SHOES_XPATH = By.xpath("/html//div[@id='productResult']//section[@class='page-options']/div[@class='filter-box-container']/div[2]/div/div[@class='loader']/ol[@class='filters-container']/li[@class='box-container brand']//input[@placeholder='Marka ara']");
-    By SELECT_BRAND_OF_SHOES_XPATH = By.xpath("//div[@id='productResult']//section[@class='page-options']/div[@class='filter-box-container']/div[2]/div/div[@class='loader']/ol[@class='filters-container']/li[@class='box-container brand']/ol/li[@alt='Dockers']/label/span[@class='filter-text']");
-    By MIN_SHOES_PRICE_XPATH = By.xpath("/html//div[@id='productResult']//section[@class='page-options']/div[@class='filter-box-container']/div[2]/div/div[@class='loader']/ol[@class='filters-container']/li[@class='box-container fiyat']//input[@placeholder='En az']");
-    By MAX_SHOES_PRICE_XPATH = By.xpath("/html//div[@id='productResult']//section[@class='page-options']/div[@class='filter-box-container']/div[2]/div/div[@class='loader']/ol[@class='filters-container']/li[@class='box-container fiyat']//input[@placeholder='En çok']");
+    By MAN__SHOE_XPATH=By.xpath("//div[@id='productResult']//section[@class='page-options']/div[@class='filter-box-container']/div[2]/div//div[@class='items-container']/ul[@class='items']/li[@alt='Erkek Ayakkabı']/a[@href='/ayakkabi-c-60000117']/span[1]");
+    By DAILY_SHOE_XPATH = By.xpath("/html//div[@id='productResult']//section[@class='page-options']/div[@class='filter-box-container']/div[2]/div//div[@class='items-container']/ul[@class='items']/li[@alt='Günlük Ayakkabı']/a[@href='/erkek-gunluk-ayakkabilar-c-60000126']");
+    By SEARCH_BRAND_OF_SHOE_XPATH = By.xpath("/html//div[@id='productResult']//section[@class='page-options']/div[@class='filter-box-container']/div[2]/div/div[@class='loader']/ol[@class='filters-container']/li[@class='box-container brand']//input[@placeholder='Marka ara']");
+    By SELECT_BRAND_OF_SHOE_XPATH = By.xpath("//div[@id='productResult']//section[@class='page-options']/div[@class='filter-box-container']/div[2]/div/div[@class='loader']/ol[@class='filters-container']/li[@class='box-container brand']/ol/li[@alt='Dockers']/label/span[@class='filter-text']");
+    By MIN_SHOE_PRICE_XPATH = By.xpath("/html//div[@id='productResult']//section[@class='page-options']/div[@class='filter-box-container']/div[2]/div/div[@class='loader']/ol[@class='filters-container']/li[@class='box-container fiyat']//input[@placeholder='En az']");
+    String  MIN_SHOE_PRICE_VALUE = "250";
+    String  MAX_SHOE_PRICE_VALUE = "500";
+    By MAX_SHOE_PRICE_XPATH = By.xpath("/html//div[@id='productResult']//section[@class='page-options']/div[@class='filter-box-container']/div[2]/div/div[@class='loader']/ol[@class='filters-container']/li[@class='box-container fiyat']//input[@placeholder='En çok']");
     By SEARCH_PRICE_XPATH = By.xpath("/html//div[@id='productResult']//section[@class='page-options']/div[@class='filter-box-container']/div[2]/div/div[@class='loader']/ol[@class='filters-container']/li[@class='box-container fiyat']//button");
-    By SHOES_COLOR_XPATH = By.xpath("//div[@id='productResult']//section[@class='page-options']/div[@class='filter-box-container']/div[2]/div//ol[@class='filters-container']/li[@class='box-container color-palette renk']/ol/li[@alt='Kahverengi']/label");
-    By SHOES_NUMBER_XPATH = By.xpath("//div[@id='productResult']//section[@class='page-options']/div[@class='filter-box-container']/div[2]/div//ol[@class='filters-container']/li[@class='box-container numara']/ol/li[@alt='44']/label");
-    By SHOES_STORE_XPATH =By.xpath("//div[@id='productResult']//section[@class='page-options']/div[@class='filter-box-container']/div[2]/div//ol[@class='filters-container']/li[@class='box-container satici']/ol/li[@alt='Moda Ateşi']/label");
-    By SELECTED_SHOES_XPATH = By.xpath("//div[@id='productresults']/div[3]/div/div/div[@class='box-container loader']//ul/div/li/div/a[@href='/dockers-6p-220370-m-k-kah-ayakkabi-p-HBV000002NL6N?magaza=Moda%20Ate%C5%9Fi']//span[@class='price product-price']");
+    By SHOE_COLOR_XPATH = By.xpath("//div[@id='productResult']//section[@class='page-options']/div[@class='filter-box-container']/div[2]/div//ol[@class='filters-container']/li[@class='box-container color-palette renk']/ol/li[@alt='Kahverengi']/label");
+    By SHOE_NUMBER_XPATH = By.xpath("//div[@id='productResult']//section[@class='page-options']/div[@class='filter-box-container']/div[2]/div//ol[@class='filters-container']/li[@class='box-container numara']/ol/li[@alt='44']/label");
+    By SHOE_STORE_XPATH =By.xpath("//div[@id='productResult']//section[@class='page-options']/div[@class='filter-box-container']/div[2]/div//ol[@class='filters-container']/li[@class='box-container satici']/ol/li[@alt='Moda Ateşi']/label");
+    By SELECTED_SHOE_XPATH = By.xpath("//div[@id='productresults']/div[3]/div/div/div[@class='box-container loader']//ul/div/li/div/a[@href='/dockers-6p-220370-m-k-kah-ayakkabi-p-HBV000002NL6N?magaza=Moda%20Ate%C5%9Fi']//span[@class='price product-price']");
+    String SELECTED_SHOE_MESSAGE = "Dockers 6P 220370 M K Kah Ayakkabı ayakkabı seçildi!";
+    String SELECTED_SHOE_ERROR_MESSAGE = "İstenilen ayakkabı seçilemedi!";
+    String SELECTED_SHOE_TITLE = "Dockers 6P 220370 M K Kah Ayakkabı" ;
 
     //Payment
     String DELIVERY_PAGE_ERROR_MESSAGE = "Teslimat sayfası gelmedi!";

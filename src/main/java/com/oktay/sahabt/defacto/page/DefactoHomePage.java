@@ -13,8 +13,8 @@ public class DefactoHomePage extends BasePageUtil implements General_Constants {
     }
 
     public DefactoLoginPage callLoginPage() {
-        sleep(2);
-        clickElement(By.className(POPUP_CLASS_NAME));
+        sleep(5);
+        //clickElement(By.className(POPUP_CLASS_NAME));
         clickElement(By.xpath(LOGIN_XPATH));
 
         System.out.println(getTitle());
@@ -32,6 +32,13 @@ public class DefactoHomePage extends BasePageUtil implements General_Constants {
         Assert.assertTrue(REGISTER_PAGE_ERROR_MESSAGE, getTitle().contains(REGISTER_PAGE_TITLE));
         log.info(REGISTER_PAGE_SUCCESS_MESSAGE);
         return new DefactoRegisterPage(driver);
+    }
+
+    public DefactoSearchPage callSearchPage(){
+
+        sleep(2);
+        driver.findElement(By.xpath("//div[@id='navbar-collapse-grid']/ul[@class='nav navbar-nav']//span[.='ERKEK']")).click();
+        return new DefactoSearchPage(driver);
     }
 
 }

@@ -3,7 +3,6 @@ package com.oktay.sahabt.hepsiburada.util;
 import com.oktay.sahabt.hepsiburada.constants.General_Constants;
 import org.openqa.selenium.*;
 import org.apache.log4j.Logger;
-import org.openqa.selenium.interactions.internal.TouchAction;
 
 import java.util.List;
 
@@ -41,20 +40,43 @@ public class BasePageUtil implements General_Constants{
 
     public List<WebElement> getFılters(){
         List<WebElement> items=driver.findElements(By.className("appliedFilter"));
-        log.info("Uygulanan Filtreler");
+        log.info("Applied Filters");
         for(WebElement e: items){
             System.out.println(e.getText());
         }
         return items;
     }
 
-    public List<WebElement> getBadgets(){
-        List<WebElement> items=driver.findElements(By.className("badge-box"));
-        log.info("Badgets");
-        for(WebElement e: items){
-            System.out.println(e.getText());
+    public void getBadgets(){
+
+        String badge,badges;
+        System.out.println("\nProduct Featured Details\n");
+        List<WebElement> allBadges = driver.findElements(By.xpath("//div[@id='badges']/div/a/span/img"));
+        for (WebElement e : allBadges)
+        {
+            badges = e.getAttribute("src");
+
+            if (badges.contains("icon_1497508515143.png"))
+                badge = "hepsiexpress Bugün Teslimat Seçeneği";
+            else if (badges.contains("kolay_iade.png"))
+                badge = "Kolay İade";
+            else if (badges.contains("fast_shipping.png"))
+                badge = "Süper Hızlı";
+            else if (badges.contains("world_25.png"))
+                badge = "25TL World Puan WORLD";
+            else if (badges.contains("sinirli_stok.png"))
+                badge = "Sınırlı Stok";
+            else if (badges.contains("freeshipping_1511595771936.png"))
+                badge = "Kargo Bedava";
+            else if (badges.isEmpty()){
+                badge = "Product Featured Details is Empty";
+            }
+            else{
+                badge = badges;
+            }
+
+            log.info(badge);
         }
-        return items;
     }
 
     // ekranı aşağıdan yukarı kaydırmak için

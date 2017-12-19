@@ -18,8 +18,6 @@ public class DefactoLoginPage extends BasePageUtil implements General_Constants 
         clickElement(SUBMIT_BUTTON);
         sleep(3);
 
-        Assert.assertTrue(LOGIN_ERROR_MESSAGE, getTitle().contains(HOME_PAGE_TITLE));
-        log.info(LOGIN_SUCCESS_MESSAGE);
 
     }
 }

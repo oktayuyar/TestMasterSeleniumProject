@@ -18,15 +18,15 @@ public class HepsiBuradaTest extends BaseTest {
     }
 
     @Test
-    public void hepsiBuradaFindMauseTest(){
+    public void hepsiBuradaFindMouseTest(){
         hepsiBuradaSuccessLoginTest();
-        new HepsiBuradaSearchPage(driver).findMausePage().showMauseDetails();
+        new HepsiBuradaSearchPage(driver).findMousePage().showMouseDetails();
     }
 
     @Test
-    public void hepsiBuradaSearchMauseTest(){
+    public void hepsiBuradaSearchMouseTest(){
         hepsiBuradaSuccessLoginTest();
-        new HepsiBuradaSearchPage(driver).searchMause();
+        new HepsiBuradaSearchPage(driver).searchMouse();
     }
 
     @Test

@@ -7,12 +7,18 @@ import org.junit.Test;
 public class DefactoTest extends BaseTest{
 
     @Test
-    public void hepsiBuradaSuccessLoginTest(){
+    public void defactoSuccessLoginTest(){
         new DefactoHomePage(driver).callLoginPage().login();
     }
 
     @Test
-    public void hepsiBuradaSuccessRegisterTest(){
+    public void defactoSuccessRegisterTest(){
         new DefactoHomePage(driver).callRegisterPage().register();
+    }
+
+    @Test
+    public void defactoSearchShirtTest(){
+        defactoSuccessLoginTest();
+        new DefactoHomePage(driver).callSearchPage().searchShirtAndGoPayment().complatePayment();
     }
 }

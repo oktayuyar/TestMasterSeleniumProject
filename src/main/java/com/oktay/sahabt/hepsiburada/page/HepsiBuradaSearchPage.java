@@ -1,10 +1,8 @@
 package com.oktay.sahabt.hepsiburada.page;
 
-import com.oktay.sahabt.hepsiburada.base.BaseTest;
 import com.oktay.sahabt.hepsiburada.constants.General_Constants;
 import com.oktay.sahabt.hepsiburada.util.BasePageUtil;
 import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class HepsiBuradaSearchPage extends BasePageUtil implements General_Constants {
@@ -14,14 +12,14 @@ public class HepsiBuradaSearchPage extends BasePageUtil implements General_Const
 
     }
     // Alert işlemlerini yaz
-    public HepsiBuradaSearchPage findMausePage(){
+    public HepsiBuradaSearchPage findMousePage(){
         clickElement(ELECTRONIC_XPATH);
         sleep(2);
         clickElement(COMPUTER_TABLET_XPATH);
         sleep(2);
         clickElement(INPUT_OUTPUT_DEVICES_XPATH);
         sleep(2);
-        clickElement(MAUSE_XPATH);
+        clickElement(MOUSE_XPATH);
         sleep(2);
         clickItemOfPaginations();
         sleep(3);
@@ -29,18 +27,20 @@ public class HepsiBuradaSearchPage extends BasePageUtil implements General_Const
         return new HepsiBuradaSearchPage(driver);
     }
 
-    public void showMauseDetails() {
+    public void showMouseDetails() {
         sleep(2);
-        clickElement(MAUSE_DETAIL_XPATH);
+        clickElement(MOUSE_DETAIL_XPATH);
 
     }
 
-    public void searchMause(){
-        setText(PRODUCT_ID,MAUSE_PRODUCT_VALUE);
+    public void searchMouse(){
+        setText(PRODUCT_ID,MOUSE_PRODUCT_VALUE);
         submit(PRODUCT_ID);
         sleep(2);
-        clickElement(LOGITECH_MAUSE_XPATH);
+        clickElement(LOGITECH_MOUSE_XPATH);
         sleep(3);
+        getBadgets();
+        sleep(2);
         clickElement(SHOPPING_CART_ID);
         sleep(2);
         clickElement(INCREASE_CART_XPATH);
@@ -56,6 +56,8 @@ public class HepsiBuradaSearchPage extends BasePageUtil implements General_Const
         sleep(2);
         clickElement(IPHONE_DETAIL_XPATH);
         sleep(3);
+        getBadgets();
+        sleep(2);
         clickElement(ADD_TO_CART_ID);
         sleep(3);
         clickElement(COMPLETE_SHOPPING_XPATH);
@@ -68,47 +70,47 @@ public class HepsiBuradaSearchPage extends BasePageUtil implements General_Const
     }
 
     public void searchShoe(){
-        setText(PRODUCT_ID,"Ayakkabı");
+        setText(PRODUCT_ID,SHOE_PRODUCT_VALUE);
         submit(PRODUCT_ID);
 
         clickElement(MAN_XPATH);
-        Assert.assertTrue(REGISTER_ERROR_MESSAGE, getTitle().contains("Erkek Ürünleri"));
-        log.info("Erkek ürünleri tıklandı");
+        Assert.assertTrue(MAN_PRODUCT_PAGE_ERROR_MESSAGE, getTitle().contains(MAN_PRODUCT_TITLE));
+        log.info(MAN_PRODUCT_PAGE_MESSAGE);
 
-        clickElement(MAN__SHOES_XPATH);
-        Assert.assertTrue(REGISTER_ERROR_MESSAGE, getTitle().contains("Erkek Ayakkabı Modelleri"));
-        log.info("Erkek ayakkabı modelleri tıklandı");
+        clickElement(MAN__SHOE_XPATH);
+        Assert.assertTrue(MAN_SHOE_MODELS_ERROR_MESSAGE, getTitle().contains(MAN_SHOE_MODELS_TITLE));
+        log.info(MAN_SHOE_MODELS_MESSAGE);
 
-        clickElement(DAILY_SHOES_XPATH);
-        Assert.assertTrue(REGISTER_ERROR_MESSAGE, getTitle().contains("Günlük Erkek Ayakkabı Modelleri"));
-        log.info("Günlük Erkek ayakkabı modelleri tıklandı");
+        clickElement(DAILY_SHOE_XPATH);
+        Assert.assertTrue(DAILY_MAN_SHOE_MODELS_ERROR_MESSAGE, getTitle().contains(DAILY_MAN_SHOE_MODELS_TITLE));
+        log.info(DAILY_MAN_SHOE_MODELS_MESSAGE);
 
         sleep(2);
-        setText(SEARCH_BRAND_OF_SHOES_XPATH,"Dockers");
+        setText(SEARCH_BRAND_OF_SHOE_XPATH,BRAND_OF_SHOE_VALUE);
         sleep(2);
-        clickElement(SELECT_BRAND_OF_SHOES_XPATH);
+        clickElement(SELECT_BRAND_OF_SHOE_XPATH);
         getTitle();
         getFılters();
-        setText(MIN_SHOES_PRICE_XPATH,"250");
-        setText(MAX_SHOES_PRICE_XPATH,"500");
+        setText(MIN_SHOE_PRICE_XPATH,MIN_SHOE_PRICE_VALUE);
+        setText(MAX_SHOE_PRICE_XPATH,MAX_SHOE_PRICE_VALUE);
         sleep(2);
         clickElement(SEARCH_PRICE_XPATH);
         getFılters();
         sleep(2);
-        clickElement(SHOES_COLOR_XPATH);
+        clickElement(SHOE_COLOR_XPATH);
         sleep(2);
         getFılters();
-        clickElement(SHOES_NUMBER_XPATH);
+        clickElement(SHOE_NUMBER_XPATH);
         sleep(2);
         getFılters();
-        clickElement(SHOES_STORE_XPATH);
+        clickElement(SHOE_STORE_XPATH);
         sleep(2);
         getFılters();
         sleep(3);
-        clickElement(SELECTED_SHOES_XPATH);
+        clickElement(SELECTED_SHOE_XPATH);
         sleep(2);
-        Assert.assertTrue(REGISTER_ERROR_MESSAGE, getTitle().contains("Dockers 6P 220370 M K Kah Ayakkabı"));
-        log.info("Dockers 6P 220370 M K Kah Ayakkabı");
+        Assert.assertTrue(SELECTED_SHOE_ERROR_MESSAGE, getTitle().contains(SELECTED_SHOE_TITLE));
+        log.info(SELECTED_SHOE_MESSAGE);
     }
 
 }
