@@ -13,10 +13,12 @@ public class DefactoLoginPage extends BasePageUtil implements General_Constants 
     }
 
     public void login() {
+        sleep(5);
         setText(LOGIN_EMAIL_TEXTBOX,EMAIL);
         setText(LOGIN_PASSWORD_TEXTBOX,PASSWORD);
         clickElement(SUBMIT_BUTTON);
-        sleep(3);
+
+        System.out.println(driver.getTitle());
 
 
     }

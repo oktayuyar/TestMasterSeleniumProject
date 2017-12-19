@@ -3,6 +3,7 @@ package com.oktay.sahabt.hepsiburada.page;
 import com.oktay.sahabt.hepsiburada.constants.General_Constants;
 import com.oktay.sahabt.hepsiburada.util.BasePageUtil;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class HepsiBuradaPaymentPage extends BasePageUtil implements General_Constants {
@@ -18,13 +19,15 @@ public class HepsiBuradaPaymentPage extends BasePageUtil implements General_Cons
 
     public void setPersonalInformation(){
 
-//        setText(NAME_TEXTBOX,NAME);
-//        setText(SURNAME_TEXTBOX,SURNAME);
-//        select(TOWN_DROPDOWN_MENU_XPATH);
-//        sleep(2);
-//        setText(ADDRESS_TEXTBOX,"Adalar");
-//        setText(ADDRESS_NAME_TEXTBOX,"İstanbul");
-//        setText(PHONE_TEXTBOX,"05382997000");
+        if(driver.getPageSource().contains("no-address-container")){
+            sleep(3);
+            setText(NAME_TEXTBOX,NAME);
+            setText(SURNAME_TEXTBOX,SURNAME);
+            sleep(2);
+            setText(ADDRESS_TEXTBOX,ADDRESS_VALUE);
+            setText(ADDRESS_NAME_TEXTBOX,ADDRESS_NAME_VALUE);
+            setText(PHONE_TEXTBOX,PHONE_VALUE);
+        }
 
         clickElement(CONTINUE_PAYMENT_XPATH);
 

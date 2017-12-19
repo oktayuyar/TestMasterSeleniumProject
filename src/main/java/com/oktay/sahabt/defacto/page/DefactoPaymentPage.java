@@ -17,49 +17,62 @@ public class DefactoPaymentPage extends BasePageUtil implements General_Constant
     }
 
     public void setAddressInformation(){
-    /*
-    setText(By.id("Address_AddressTypeId"),"Ev");
+
+        if(getTitle().contains("Address_AddressTypeId")){
+            sleep(3);
+            setText(ADDRESS_TYPE_ID,"Ev");
+            sleep(2);
+            setText(ADDRESS_CITY_ID,"Hatay");
+            sleep(2);
+            setText(ADDRESS_COUNTY_ID,"Antakya");
+            sleep(2);
+            setText(ADDRESS_POSTAL_CODE_ID,"31200");
+            sleep(2);
+            setText(ADDRESS_TEXT_ID,"Eski Antakya");
+            sleep(2);
+            setText(ADDRESS_FIRST_NAME_ID,"Oktay");
+            sleep(2);
+            setText(ADDRESS_LAST_NAME_ID,"Uyar");
+            sleep(2);
+            setText(ADDRESS_MOBILE_PHONE_ID,"5382997022");
+            sleep(2);
+            setText(ADDRESS_IDENTITY_NUMBER_ID,"43882239212");
+            sleep(2);
+            click(SAVE_ADDRESS_INFORMATION_XPATH);
+            sleep(2);
+        }
+        else{
+            log.info(ADDRESS_LOG_INFO);
+        }
         sleep(2);
-        setText(By.id("Address_AddressCityId"),"Hatay");
+        click(SELECT_TYPE_OF_DELIVERY_XPATH);
         sleep(2);
-        setText(By.id("Address_AddressCountyId"),"Antakya");
-        sleep(2);
-        setText(By.id("Address_AddressPostalCode"),"31200");
-        sleep(2);
-        setText(By.id("Address_AddressText"),"Bozcaada");
-        sleep(2);
-        setText(By.id("Address_AddressFirstName"),NAME);
-        sleep(2);
-        setText(By.id("Address_AddressLastName"),SURNAME);
-        sleep(2);
-        setText(By.id("Address_AddressMobilePhone"),"5382997022");
-        sleep(2);
-        setText(By.id("Address_AddressIdentityNumber"),"43882239212");
-        sleep(2);
-        driver.findElement(By.xpath("/html//form[@id='AddressForm']/div[@class='form-group row top15']//input[@value='Kaydet']")).click();
-    */
-        sleep(2);
-        driver.findElement(By.xpath("/html/body/section/div[2]/div[1]/div[@class='cursor-pointer']//b[.='Adrese Teslimat']")).click();
-        sleep(2);
-        driver.findElement(By.xpath("/html/body/section/div[3]//button[@name='ClickCollectID']")).click();
+
+        if(getTitle().contains("Shopping/Address"))
+            log.info(DELIVERY_ADDRESS_LOG_INFO);
+        click(CLICK_GO_TO_PAY_XPATH);
         sleep(2);
     }
 
     private void setCardInformation() {
-        setText(By.id("Payment_CardNumber1"),"4506344220167840");
         sleep(2);
-        setText(By.id("Payment_ExpireMonth"),"10");
+        if(getTitle().contains("Shopping/Payment"))
+            log.info(PAYMENT_LOG_INFO);
+        setText(PAYMENT_CARD_NUMBER_ID,"4506344220167840");
         sleep(2);
-        setText(By.id("Payment_ExpireYear"),"2020");
+        setText(PAYMENT_EXPIRE_MONTH_ID,"10");
         sleep(2);
-        setText(By.id("Payment_SecurityCode"),"290");
+        setText(PAYMENT_EXPIRE_YEAR_ID,"2020");
         sleep(2);
-        driver.findElement(By.id("IsCreditCardContractEnable")).click();
+        setText(PAYMENT_SECURITY_CODE_ID,"290");
         sleep(2);
-        driver.findElement(By.id("IsMasterPassEnable")).click();
+        click(CREDIT_CARD_CONTRACT_ENABLE_ID);
         sleep(2);
-        driver.findElement(By.xpath("/html//div[@id='MasterPassIsActive']/div[3]//div[@class='form-horizontal']/div[10]//input[@name='accountAliasName']")).sendKeys("Oktayy Uyar");
+        click(MASTER_PASS_ENABLE_ID);
         sleep(2);
-        driver.findElement(By.xpath("/html//button[@id='CreditCardBtn']"));
+        setText(ACCOUNT_ALIAS_NAME_XPATH,"Oktayy Uyar");
+        sleep(2);
+        click(CREDIT_CARD_BUTTON);
+        log.info(SUCCESS_LOG_INFO);
     }
 }

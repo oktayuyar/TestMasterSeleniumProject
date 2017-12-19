@@ -3,6 +3,7 @@ package com.oktay.sahabt.hepsiburada.page;
 import com.oktay.sahabt.hepsiburada.constants.General_Constants;
 import com.oktay.sahabt.hepsiburada.util.BasePageUtil;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class HepsiBuradaSearchPage extends BasePageUtil implements General_Constants {
@@ -17,11 +18,20 @@ public class HepsiBuradaSearchPage extends BasePageUtil implements General_Const
         sleep(2);
         clickElement(COMPUTER_TABLET_XPATH);
         sleep(2);
+        Assert.assertTrue(COMPUTER_TABLET_PAGE_ERROR_MESSAGE, getTitle().contains(COMPUTER_TABLET_PAGE_TITLE));
+        log.info(COMPUTER_TABLET_PAGE_MESSAGE);
+
         clickElement(INPUT_OUTPUT_DEVICES_XPATH);
         sleep(2);
+        Assert.assertTrue(INPUT_OUTPUT_DEVICES_ERROR_MESSAGE, getTitle().contains(INPUT_OUTPUT_DEVICES_PAGE_TITLE));
+        log.info(INPUT_OUTPUT_DEVICES_PAGE_MESSAGE);
+
         clickElement(MOUSE_XPATH);
         sleep(2);
-        clickItemOfPaginations();
+        Assert.assertTrue(MOUSE_ERROR_MESSAGE, getTitle().contains(MOUSE_PAGE_TITLE));
+        log.info(MOUSE_PAGE_MESSAGE);
+
+        clickItemOfPaginations(); // sayfaları geziyoruz
         sleep(3);
 
         return new HepsiBuradaSearchPage(driver);
@@ -30,29 +40,38 @@ public class HepsiBuradaSearchPage extends BasePageUtil implements General_Const
     public void showMouseDetails() {
         sleep(2);
         clickElement(MOUSE_DETAIL_XPATH);
+        sleep(2);
+        Assert.assertTrue(MOUSE_DETAIL_ERROR_MESSAGE, getTitle().contains(MOUSE_DETAIL_PAGE_TITLE));
+        log.info(MOUSE_DETAIL_PAGE_MESSAGE);
 
     }
 
     public void searchMouse(){
+        String count;
         setText(PRODUCT_ID,MOUSE_PRODUCT_VALUE);
         submit(PRODUCT_ID);
         sleep(2);
+        controlSearchWithProductId(MOUSE_PRODUCT_VALUE);
+        sleep(2);
         clickElement(LOGITECH_MOUSE_XPATH);
         sleep(3);
-        getBadgets();
-        sleep(2);
         clickElement(SHOPPING_CART_ID);
         sleep(2);
         clickElement(INCREASE_CART_XPATH);
         sleep(2);
         clickElement(INCREASE_CART_XPATH);
-        sleep(2);
+        sleep(3);
         clickElement(COMPLETE_SHOPPING_XPATH);
+
+        Assert.assertTrue(SHOPPING_CART_PAGE_ERROR_MESSAGE, getTitle().contains(SHOPPING_CART_PAGE_TITLE));
+        log.info(SHOPPING_CART_PAGE_MESSAGE);
     }
 
     public HepsiBuradaPaymentPage searchIponeAndGoPayment(){
         setText(PRODUCT_ID,IPHONE_PRODUCT_VALUE);
         submit(PRODUCT_ID);
+        sleep(2);
+        controlSearchWithProductId(IPHONE_PRODUCT_VALUE);
         sleep(2);
         clickElement(IPHONE_DETAIL_XPATH);
         sleep(3);

@@ -19,27 +19,33 @@ public class DefactoSearchPage extends BasePageUtil implements General_Constants
 
     public void searchShirt(){
         sleep(2);
-        driver.findElement(By.cssSelector("._mCS_9 li:nth-of-type(1) gt")).click();
+        click(CLOTHING_CSS_SELECTOR);
         sleep(2);
-        driver.findElement(By.cssSelector("._mCS_17 li:nth-of-type(8) gt")).click();
+        if(getTitle().contains("giyim"))
+            log.info(CLOTHING_LOG_INFO);
+        click(SHIRT_CSS_SELECTOR);
         sleep(2);
-        driver.findElement(By.cssSelector("#facetAccordion .panel-default:nth-of-type(5) [data-toggle]")).click();
+        if(getTitle().contains("gömlek"))
+            log.info(SHIRT_LOG_INFO);
+        click(MODEL_CSS_SELECTOR);
         sleep(2);
-        driver.findElement(By.xpath("//div[@id='fx_c']/div/div/div/div[@class='mCSB_container']/div[@id='boutique-category']/ul[@class='navbar-default']//gt[.='Mavi']")).click();
+        click(COLOR_OF_SHIRT_XPATH);
         sleep(2);
-        driver.findElement(By.xpath("//div[@id='fx_c']/div/div/div/div[@class='mCSB_container']/div[@id='boutique-category']/ul[@class='navbar-default']//gt[.='Çivit Mavisi']")).click();
-        sleep(2);
-        driver.findElement(By.xpath("/html//section[@id='fixed']//a[@href='/cift-cepli-dar-kalip-gomlek-780010']/figure//h2[.='Çift Cepli Dar Kalıp Gömlek']")).click();
-        sleep(2);
-        driver.findElement(By.xpath("/html//section[@id='fixed']/div[5]/div/div//ul[@class='productSizes productWidthHeight top15']/li[4]/a[@href='javascript:;']/span[.='L']")).click();
-        sleep(2);
-        setText(By.id("Quantity"),"2");
+        if(getTitle().contains("mavi"))
+            log.info(COLOR_LOG_INFO);
+        click(ANOTHER_COLOR_OF_SHIRT_XPATH);
         sleep(3);
-        driver.findElement(By.id("addToCart")).click();
+        click(SELECTED_SHIRT_XPATH);
+        sleep(3);
+        click(SIZE_OF_SHIRT_XPATH);
         sleep(2);
-        driver.findElement(By.id("popupBasket_ComplateShopping")).click();
-        sleep(2);
-        driver.findElement(By.id("ComplateShoppingDown")).click();
+        setText(QUANTITY_ID,"1");
+        sleep(3);
+        click(ADD_TO_CARD_ID);
+        sleep(5);
+        click(POPUP_COMPLATE_SHOPPING_ID);
+        sleep(3);
+        click(COMPLATE_SHOPPING_ID);
         sleep(2);
     }
 

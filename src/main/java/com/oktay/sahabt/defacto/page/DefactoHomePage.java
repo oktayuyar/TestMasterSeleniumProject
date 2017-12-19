@@ -15,18 +15,17 @@ public class DefactoHomePage extends BasePageUtil implements General_Constants {
     public DefactoLoginPage callLoginPage() {
         sleep(5);
         //clickElement(By.className(POPUP_CLASS_NAME));
+        //sleep(2);
         clickElement(By.xpath(LOGIN_XPATH));
-
-        System.out.println(getTitle());
-
-        Assert.assertTrue(LOGIN_PAGE_ERROR_MESSAGE, getTitle().contains(LOGIN_PAGE_TITLE));
+        sleep(5);
+        Assert.assertTrue(LOGIN_PAGE_ERROR_MESSAGE, getTitle().contains(HOME_PAGE_TITLE));
         log.info(LOGIN_PAGE_SUCCESS_MESSAGE);
         return new DefactoLoginPage(driver);
     }
 
     public DefactoRegisterPage callRegisterPage(){
         sleep(2);
-        clickElement(By.className(POPUP_CLASS_NAME));
+        //clickElement(By.className(POPUP_CLASS_NAME));
         clickElement(By.xpath(REGISTER_XPATH));
 
         Assert.assertTrue(REGISTER_PAGE_ERROR_MESSAGE, getTitle().contains(REGISTER_PAGE_TITLE));
@@ -36,8 +35,10 @@ public class DefactoHomePage extends BasePageUtil implements General_Constants {
 
     public DefactoSearchPage callSearchPage(){
 
-        sleep(2);
-        driver.findElement(By.xpath("//div[@id='navbar-collapse-grid']/ul[@class='nav navbar-nav']//span[.='ERKEK']")).click();
+        sleep(5);
+        click(HOME_PAGE_MAN_XPATH);
+        if(getTitle().contains("erkek"))
+            log.info(CLICK_MAN_LOG_INFO);
         return new DefactoSearchPage(driver);
     }
 

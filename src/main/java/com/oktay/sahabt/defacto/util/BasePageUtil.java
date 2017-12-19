@@ -26,6 +26,8 @@ public class BasePageUtil implements General_Constants {
         find(by).click();
     }
 
+    public void click(By by){ driver.findElement(by).click(); }
+
     public void submit(By by) {
         driver.findElement(by).submit();
     }
@@ -52,7 +54,8 @@ public class BasePageUtil implements General_Constants {
 
     public void getBadgets(){
 
-        String badge,badges;
+        String badge="";
+        String badges;
         System.out.println("\nProduct Featured Details\n");
         List<WebElement> allBadges = driver.findElements(By.xpath("//div[@id='badges']/div/a/span/img"));
         for (WebElement e : allBadges)
@@ -60,25 +63,34 @@ public class BasePageUtil implements General_Constants {
             badges = e.getAttribute("src");
 
             if (badges.contains("icon_1497508515143.png"))
-                badge = "hepsiexpress Bugün Teslimat Seçeneği";
+                badge += "hepsiexpress Bugün Teslimat Seçeneği";
             else if (badges.contains("kolay_iade.png"))
-                badge = "Kolay İade";
+                badge += "Kolay İade";
             else if (badges.contains("fast_shipping.png"))
-                badge = "Süper Hızlı";
+                badge += "Süper Hızlı";
             else if (badges.contains("world_25.png"))
-                badge = "25TL World Puan WORLD";
+                badge += "25TL World Puan WORLD";
             else if (badges.contains("sinirli_stok.png"))
-                badge = "Sınırlı Stok";
+                badge += "Sınırlı Stok";
             else if (badges.contains("freeshipping_1511595771936.png"))
-                badge = "Kargo Bedava";
+                badge += "Kargo Bedava";
             else if (badges.isEmpty()){
-                badge = "Product Featured Details is Empty";
+                badge += "Product Featured Details is Empty";
             }
             else{
                 badge = badges;
             }
 
             log.info(badge);
+        }
+    }
+
+    public void controlSearchWithProductId(String productId){
+        if(driver.getCurrentUrl().contains("q="+productId)){
+            log.info(productId+" nolu ürün başarılı bir şekilde aratıldı.");
+        }
+        else {
+            log.fatal(productId+" nolu ürün aratılamadı!");
         }
     }
 

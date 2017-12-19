@@ -25,6 +25,9 @@ public class DefactoRegisterPage extends BasePageUtil implements General_Constan
         clickElement(REGISTER_RULES_XPATH);
         clickElement(REGISTER_TERMS_XPATH);
         clickElement(REGISTER_BUTTON);
+        sleep(2);
 
+        Assert.assertTrue(REGISTER_ERROR_MESSAGE, getTitle().contains(HOME_PAGE_TITLE));
+        log.info(REGISTER_SUCCESS_MESSAGE);
     }
 }
