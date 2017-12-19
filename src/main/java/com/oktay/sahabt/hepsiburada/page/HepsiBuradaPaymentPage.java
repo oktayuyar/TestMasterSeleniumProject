@@ -31,7 +31,7 @@ public class HepsiBuradaPaymentPage extends BasePageUtil implements General_Cons
             sleep(2);
             setText(ADDRESS_TEXTBOX,ADDRESS_VALUE);
             setText(ADDRESS_NAME_TEXTBOX,ADDRESS_NAME_VALUE);
-            setText(PHONE_TEXTBOX,PHONE_VALUE);
+            setText(PHONE_TEXTBOX,PHONE_VALUE   );
 
             sleep(2);
             clickElement(CONTINUE_PAYMENT_XPATH);
