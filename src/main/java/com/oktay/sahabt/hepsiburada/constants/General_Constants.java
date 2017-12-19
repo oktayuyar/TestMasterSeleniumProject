@@ -136,7 +136,7 @@ public interface General_Constants {
 
 
     By CARD_NUMBER_ID = By.id("card-no");
-    String CARD_NUMBER = "4506344220167848";
+    String CARD_NUMBER = "4506344220167040";
     By CARD_NAME_XPATH = By.xpath("/html//input[@id='holder-Name']");
     String CARD_NAME = "Oktay Uyar";
     By MOUNTH_XPATH = By.xpath("/html//form[@id='form-credit-card']//div[@class='date-col group']/div[1]/div/button[@title='Ay']/span[@class='filter-option pull-left']");
@@ -144,7 +144,7 @@ public interface General_Constants {
     By YEAR_XPATH = By.xpath("/html//form[@id='form-credit-card']//div[@class='date-col group']/div[2]/div/button[@title='Yıl']/span[@class='filter-option pull-left']");
     By SELECTED_YEAR_XPATH = By.xpath("/html//form[@id='form-credit-card']//div[@class='date-col group']/div[2]/div/div/ul[@role='menu']/li[@rel='6']/a[@class='']");
     By CCV_ID = By.id("cvc");
-    String CCV= "290";
+    String CCV= "173";
     By CONTINUE_XPATH =By.xpath("/html//div[@id='short-summary']//button[@class='btn btn-primary full']");
 
     String  PAYMENT_INFORMATION_TITLE = "Ödeme Bilgileri";

@@ -58,19 +58,19 @@ public class DefactoPaymentPage extends BasePageUtil implements General_Constant
         sleep(2);
         if(getTitle().contains("Shopping/Payment"))
             log.info(PAYMENT_LOG_INFO);
-        setText(PAYMENT_CARD_NUMBER_ID,"4506344220167840");
+        setText(PAYMENT_CARD_NUMBER_ID,"4506344220167040");
         sleep(2);
         setText(PAYMENT_EXPIRE_MONTH_ID,"10");
         sleep(2);
         setText(PAYMENT_EXPIRE_YEAR_ID,"2020");
         sleep(2);
-        setText(PAYMENT_SECURITY_CODE_ID,"290");
+        setText(PAYMENT_SECURITY_CODE_ID,"173");
         sleep(2);
         click(CREDIT_CARD_CONTRACT_ENABLE_ID);
         sleep(2);
         click(MASTER_PASS_ENABLE_ID);
         sleep(2);
-        setText(ACCOUNT_ALIAS_NAME_XPATH,"Oktayy Uyar");
+        setText(ACCOUNT_ALIAS_NAME_XPATH,"Oktay Uyar");
         sleep(2);
         click(CREDIT_CARD_BUTTON);
         log.info(SUCCESS_LOG_INFO);

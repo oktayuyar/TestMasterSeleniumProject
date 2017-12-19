@@ -19,7 +19,12 @@ public class HepsiBuradaPaymentPage extends BasePageUtil implements General_Cons
 
     public void setPersonalInformation(){
 
-        if(driver.getPageSource().contains("no-address-container")){
+        if(driver.getPageSource().contains("selectbox-choice")){
+
+            sleep(2);
+            clickElement(CONTINUE_PAYMENT_XPATH);
+        }
+        else {
             sleep(3);
             setText(NAME_TEXTBOX,NAME);
             setText(SURNAME_TEXTBOX,SURNAME);
@@ -27,9 +32,10 @@ public class HepsiBuradaPaymentPage extends BasePageUtil implements General_Cons
             setText(ADDRESS_TEXTBOX,ADDRESS_VALUE);
             setText(ADDRESS_NAME_TEXTBOX,ADDRESS_NAME_VALUE);
             setText(PHONE_TEXTBOX,PHONE_VALUE);
-        }
 
-        clickElement(CONTINUE_PAYMENT_XPATH);
+            sleep(2);
+            clickElement(CONTINUE_PAYMENT_XPATH);
+        }
 
         Assert.assertTrue(PAYMENT_PAGE_ERROR_MESSAGE, getTitle().contains(DELIVERY_PAGE_TITLE));
         log.info(PAYMENT_PAGE_SUCCESS_MESSAGE);
