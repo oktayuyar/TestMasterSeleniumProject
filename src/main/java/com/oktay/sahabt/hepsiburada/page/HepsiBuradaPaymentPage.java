@@ -18,24 +18,30 @@ public class HepsiBuradaPaymentPage extends BasePageUtil implements General_Cons
     }
 
     public void setPersonalInformation(){
-
-        if(driver.getPageSource().contains("selectbox-choice")){
-
-            sleep(2);
-            clickElement(CONTINUE_PAYMENT_XPATH);
-        }
-        else {
+        sleep(2);
+        if (getText(By.className("box-header-title")).equals("Bu Adresi Kullan")) {
             sleep(3);
             setText(NAME_TEXTBOX,NAME);
             setText(SURNAME_TEXTBOX,SURNAME);
             sleep(2);
+            click(ADDRESS_CITY_CSS_SELECTOR);
+            sleep(2);
+            click(SELECTED_ADDRESS_CITY_CSS_SELECTOR);
+            sleep(2);
+            click(ADDRESS_COUNTY_CSS_SELECTOR);
+            sleep(2);
+            click(SELECTED_ADDRESS_COUNTY_CSS_SELECTOR);
+            sleep(2);
             setText(ADDRESS_TEXTBOX,ADDRESS_VALUE);
             setText(ADDRESS_NAME_TEXTBOX,ADDRESS_NAME_VALUE);
-            setText(PHONE_TEXTBOX,PHONE_VALUE   );
-
+            setText(ZIP_CODE, "34520");
             sleep(2);
-            clickElement(CONTINUE_PAYMENT_XPATH);
+            setText(PHONE_TEXTBOX,PHONE_VALUE);
+
         }
+        sleep(2);
+        clickElement(CONTINUE_PAYMENT_XPATH);
+        sleep(2);
 
         Assert.assertTrue(PAYMENT_PAGE_ERROR_MESSAGE, getTitle().contains(DELIVERY_PAGE_TITLE));
         log.info(PAYMENT_PAGE_SUCCESS_MESSAGE);

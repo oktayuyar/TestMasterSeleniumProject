@@ -128,8 +128,14 @@ public interface General_Constants {
     By ADDRESS_TEXTBOX = By.id("address");
     By ADDRESS_NAME_TEXTBOX = By.id("address-name");
     By PHONE_TEXTBOX = By.id("phone");
-    By TOWN_DROPDOWN_MENU_XPATH= By.xpath("//form[@id='form-address']//div[@class='box-content']/section[2]/div[3]/div[@class='controls']/div/button[@title='ADALAR']/span[@class='filter-option pull-left']");
-    By CONTINUE_PAYMENT_XPATH= By.xpath("//div[@id='short-summary']//button[@class='btn btn-primary full']/span[@class='text']");
+    By ZIP_CODE = By.id("zip-code");
+    By TOWN_DROPDOWN_MENU_XPATH = By.xpath("//form[@id='form-address']//div[@class='box-content']/section[2]/div[3]/div[@class='controls']/div/button[@title='ADALAR']/span[@class='filter-option pull-left']");
+    By CONTINUE_PAYMENT_XPATH = By.xpath("//div[@id='short-summary']//button[@class='btn btn-primary full']/span[@class='text']");
+    By ADDRESS_CITY_CSS_SELECTOR = By.cssSelector(".address-form .control-group:nth-child(4) .filter-option");
+    By SELECTED_ADDRESS_CITY_CSS_SELECTOR= By.cssSelector(".address-form .control-group:nth-child(4) [rel=\"1\"] .text");
+    By ADDRESS_COUNTY_CSS_SELECTOR = By.cssSelector(".address-form .control-group:nth-child(5) .filter-option");
+    By SELECTED_ADDRESS_COUNTY_CSS_SELECTOR = By.cssSelector(".address-form .control-group:nth-child(5) [rel=\"1\"] .text");
+
     String ADDRESS_VALUE= "Adalar";
     String ADDRESS_NAME_VALUE ="Adalar İstanbul";
     String PHONE_VALUE = "05382997000";

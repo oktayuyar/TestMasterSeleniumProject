@@ -85,6 +85,10 @@ public class BasePageUtil implements General_Constants {
         }
     }
 
+    public String getText(By by) {
+        return driver.findElement(by).getText();
+    }
+
     public void controlSearchWithProductId(String productId){
         if(driver.getCurrentUrl().contains("q="+productId)){
             log.info(productId+" nolu ürün başarılı bir şekilde aratıldı.");

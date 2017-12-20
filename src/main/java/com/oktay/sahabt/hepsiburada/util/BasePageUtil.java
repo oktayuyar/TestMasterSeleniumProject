@@ -23,6 +23,8 @@ public class BasePageUtil implements General_Constants{
         find(by).click();
     }
 
+    public void click(By by){ driver.findElement(by).click(); }
+
     public void submit(By by) {
         driver.findElement(by).submit();
     }
@@ -78,6 +80,10 @@ public class BasePageUtil implements General_Constants{
 
             log.info(badge);
         }
+    }
+
+    public String getText(By by) {
+        return driver.findElement(by).getText();
     }
 
     // ekranı aşağıdan yukarı kaydırmak için
