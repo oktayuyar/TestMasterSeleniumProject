@@ -43,7 +43,7 @@ public class HepsiBuradaPaymentPage extends BasePageUtil implements General_Cons
         clickElement(CONTINUE_PAYMENT_XPATH);
         sleep(2);
 
-        Assert.assertTrue(PAYMENT_PAGE_ERROR_MESSAGE, getTitle().contains(DELIVERY_PAGE_TITLE));
+        Assert.assertTrue(PAYMENT_PAGE_ERROR_MESSAGE, getTitle().contains(PAYMENT_PAGE_TITLE));
         log.info(PAYMENT_PAGE_SUCCESS_MESSAGE);
 
     }
